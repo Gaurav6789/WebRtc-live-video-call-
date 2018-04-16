@@ -1,5 +1,5 @@
-# vedio-chat
-worked at php
+# live-chat , diagnosis ,comparision platform
+
 hello everyone ,
 here my efforts to implement my idea over the visualized manner and that's why i created this project.
 you can get into the start from page index.html
