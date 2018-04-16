@@ -1,0 +1,251 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet"> 
+    <link href="node_modules\vuetify\dist\vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  </head>
+<style>
+img:hover{
+  padding: 12px
+}
+</style>
+
+  <body>
+  <div id="app" >
+    <v-app id="inspire" >
+      <v-navigation-drawer
+        clipped
+        fixed
+        v-model="drawer"
+        app
+      >
+        <v-list dense >
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-icon>dashboard</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Emergency Contract</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-icon>settings</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Health and care</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-icon>settings</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>Discussions</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-icon>settings</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>NGO-SCHEMS</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile @click="">
+            <v-list-tile-action>
+              <v-icon>settings</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+            <a href="why we.html" >
+              <v-list-tile-title color="dark">What we are</v-list-tile-title>
+          	</a>
+            </v-list-tile-content>
+          </v-list-tile>          
+
+        </v-list>
+      </v-navigation-drawer>
+
+      <v-toolbar app fixed clipped-left >
+        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-toolbar-title>DOCT-KODER</v-toolbar-title>
+        <v-spacer></v-spacer>
+        
+      <v-dialog v-model="dialog" persistent max-width="500px">
+        <v-btn color="primary" dark slot="activator">Sign In</v-btn>
+        <v-card>
+          <v-card-title>
+            <span class="headline">User Profile</span>
+          </v-card-title>
+          <v-card-text>
+            <v-container grid-list-md>
+              <v-layout wrap>
+                <v-flex xs12 sm6 md4>
+                  <v-text-field label="Legal first name" required></v-text-field>
+                </v-flex>
+                <v-flex xs12 sm6 md4>
+                  <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
+                </v-flex>
+       
+                <v-flex xs12>
+                  <v-text-field label="Email" required></v-text-field>
+                </v-flex>
+                <v-flex xs12>
+                  <v-text-field label="Password" type="password" required></v-text-field>
+                </v-flex>
+                <v-flex xs12 sm6>
+                  <v-select
+                    label="Age"
+                    required
+                    :items="['0-17', '18-29', '30-54', '54+']"
+                  ></v-select>
+                </v-flex>
+                <v-flex xs12 sm6>
+                  <v-select
+                    label="id Proof"
+                    multiple
+                    autocomplete
+                    chips
+                    :items="['*Aadhar number', 'Mobile no.', 'Pan card', 'Driving licence', 'Passport']"
+                  ></v-select>
+                </v-flex>
+                <v-flex xs12>
+                  <v-text-field label="Aadhar" type="number" required></v-text-field>
+                </v-flex>
+                <v-flex xs12>
+                  <v-text-field label="contact" type="number" required></v-text-field>
+                </v-flex>
+              </v-layout>
+              <v-flex xs12>
+                  <v-text-field label="contact2" type="number" ></v-text-field>
+                </v-flex>
+            </v-container>
+            <small>*indicates required field</small>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="blue darken-1" flat @click.native="dialog = false">Close</v-btn>
+            <v-btn color="blue darken-1" flat @click.native="dialog = false">Save</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+
+        <v-btn flat small color="error">Log-in</v-btn>
+      </v-toolbar>
+<br><br>
+
+    <v-container grid-list-xl text-xs-center>
+      <v-layout row wrap>
+        <v-flex xs12 >
+          <v-card dark color="purple">
+            <v-card-text><h1>Work for health</h1></v-card-text>
+          </v-card>
+        </v-flex>
+
+
+        <v-flex  xs12  sm4  md4 lg4>
+          <v-card dark color="secondary">
+            <v-card-media>
+            	<a href="https://dazzling-mahavira-90a939.netlify.com/#/Chat">
+                   <img src="images/doct.png" > 
+               </a>
+            </v-card-media>
+        <v-card-title primary-title>
+          
+            <div class="headline" style="text-align: center;">Direct-Doctor</div>
+          
+        </v-card-title>
+        <v-card-actions>
+          <v-btn flat color="purpl" @click.native="show1 = !show1">Explore</v-btn>
+          <v-spacer></v-spacer>
+          <v-btn icon @click.native="show1 = !show1">
+            <v-icon>{{ show1 ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-slide-y-transition>
+          <v-card-text v-show="show1">
+           Direct connect to the doctor for the diagnosis and any queries through the video chat or only message .The reply will be taken within the 12-hr of request . 
+          </v-card-text>
+        </v-slide-y-transition>
+          </v-card>
+        </v-flex>
+
+
+        <v-flex  xs12  sm4  md4 lg4>
+          <v-card dark color="secondary">
+            <v-card-media>
+            	<a href="page1.html">
+               <img src="images/report.png"  height="80%"></a> 
+            </v-card-media>
+        <v-card-title primary-title>         
+            <div class="headline" style="text-align: center;">Diagnosis</div>
+        </v-card-title>
+        <v-card-actions>
+          <v-btn flat color="p" @click.native="show2 = !show2">Explore</v-btn>
+          <v-spacer></v-spacer>
+          <v-btn icon @click.native="show2 = !show2">
+            <v-icon>{{ show2 ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-slide-y-transition>
+          <v-card-text v-show="show2">
+          	Over this link we will procede you to the real time diagnosis enviornment. The diagnosis through the body part , symtoms , state , query and other thing can be done and procced for the connection to doctor. 
+          </v-card-text>
+        </v-slide-y-transition>
+          </v-card>
+        </v-flex>
+        <v-flex  xs12  sm4  md4 lg4>
+          <v-card dark >
+           <v-card-media>
+            	<a href="search.html">
+               <img src="images/medicine.png"  height="80%"></a> 
+            </v-card-media>
+        <v-card-title primary-title>        
+            <div class="headline" style="text-align: center;">Medicine</div>
+        </v-card-title>
+        <v-card-actions>
+          <v-btn flat color="" @click.native="show = !show">Explore</v-btn>
+          <v-spacer></v-spacer>
+          <v-btn icon @click.native="show = !show">
+            <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+          </v-btn>
+        </v-card-actions>
+        <v-slide-y-transition>
+          <v-card-text v-show="show">
+            Compare all type of medicine with there prices ,compositions , name , type and choose the best alternative and suitable medicine .
+          </v-card-text>
+        </v-slide-y-transition>
+          </v-card>
+        </v-flex>
+
+      </v-layout>
+    </v-container>
+
+
+      <v-footer app fixed>
+        <span >footer is here to go with again in any case</span>
+      </v-footer>
+    </v-app>
+  </div>
+   
+    <script src="vue.js"></script>
+    <script src="node_modules\vuetify\dist\vuetify.js"></script>
+    <script>
+  new Vue({
+    el: '#app',
+    data: () => ({
+      drawer: false,
+           show: false,
+           show1:false,
+           show2:false,
+           dialog:false,
+    }),
+
+    props: {
+      source: String
+    }
+  })
+    </script>
+  </body>
+  </html>
